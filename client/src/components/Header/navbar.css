@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "YouTubeSans";
+  src: url("fonts/YouTubeSans-Regular.woff2") format("woff2"),
+    url("fonts/YouTubeSans-Regular.woff") format("woff"),
+    url("fonts/YouTubeSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+  font-family: "YouTubeSans";
+}
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+}
+.search_input {
+  flex-grow: 1;
+  max-width: 100px;
+}
+.search_input .search {
+  font-size: 18px;
+}
+.links {
+  display: flex;
+  font-size: 20px;
+  gap: 30px;
+}
+
+.nav_links {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+}
+.nav_links {
+  display: none;
+}
+.nav_links .sign_in {
+  display: block;
+}
+@media (min-width: 420px) {
+  .search_input {
+    max-width: 150px;
+  }
+}
+@media (min-width: 640px) {
+  .search_input {
+    max-width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .nav_links {
+    display: flex;
+  }
+  .search_input {
+    max-width: 300px;
+  }
+  .search_input .search {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .search_input {
+    max-width: 500px;
+  }
+}
