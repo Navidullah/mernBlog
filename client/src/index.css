@@ -59,3 +59,7 @@ button {
 .sign-in-button {
   border-color: var(--border-color);
 }
+.max-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}

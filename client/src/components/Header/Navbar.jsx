@@ -26,9 +26,9 @@ const Navbar = () => {
   };
   return (
     <header className=" shadow-md">
-      <navbar className="navbar">
-        <Link to="/" className="logo">
-          <span className="text-red-500 ">The</span>
+      <nav className="navbar">
+        <Link to="/" className="logo bg-emerald-500 p-2 rounded-md text-white ">
+          <span className=" ">The</span>
           <span>Pulse</span>
         </Link>
         <div className="search_input">
@@ -54,7 +54,7 @@ const Navbar = () => {
 
           <Link
             to="/signin"
-            className="border-4 px-1 border-indigo-600 rounded-md"
+            className="border-4 px-1 border-emerald-500 rounded-md"
           >
             Sign in
           </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
             )}
           </button>
         </div>
-      </navbar>
+      </nav>
       {isOpen && (
         <div className="md:hidden">
           <div className=" w-full px-2 pt-2 pb-3 space-y-1 sm:px-3">
