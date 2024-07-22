@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Light mode styles */
+body {
+  --bg-color: white;
+  --text-color: black;
+  --navbar-bg: white;
+  --navbar-text: black;
+  --input-bg: rgb(243, 245, 245);
+  --input-text: black;
+  --button-bg: white;
+  --button-text: black;
+  --border-color: #4f46e5;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --navbar-bg: #1c1c1c;
+  --navbar-text: #f0f0f0;
+  --input-bg: #333;
+  --input-text: #f0f0f0;
+  --button-bg: transparent;
+  --button-text: white;
+  --border-color: #6200ea;
+}
+
+/* Apply the colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+}
+
+.search_input input {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.nav_links Link {
+  color: var(--navbar-text);
+}
+
+.nav_links Link:hover {
+  color: var(--text-color);
+}
+
+.sign-in-button {
+  border-color: var(--border-color);
+}

@@ -5,7 +5,7 @@ import SignIn from "./pages/SignIn.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Projects from "./pages/Projects.jsx";
-import Header from "./components/Header/Header.jsx";
+
 import Navbar from "./components/Header/Navbar.jsx";
 
 function App() {
