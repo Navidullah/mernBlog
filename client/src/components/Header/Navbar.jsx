@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="shadow-md">
+    <header className="shadow-md dark:bg-gray-800">
       <nav className="navbar">
         <Link
           to="/"

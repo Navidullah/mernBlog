@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-coral-blue max-[1024px]:max-w-[1024px]">
-      <div className="max-container flex justify-between mt-[50px] text-white py-[20px] max-md:flex-col">
+    <div className="dark:bg-gray-800 max-[1024px]:max-w-[1024px]">
+      <div className="max-container flex justify-between mt-[50px]  py-[20px] max-md:flex-col">
         <div className="info  flex flex-col gap-[14px]">
           <div className="flex items-center text-3xl text-coral-white max-md:text-2xl">
             <BsClipboardPulse />
