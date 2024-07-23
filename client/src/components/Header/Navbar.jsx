@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-5 text-3xl">
           <button
-            className="mode flex items-center justify-center  rounded-full "
+            className="mode flex items-center justify-center h-[50px] w-[50px] border-none rounded-full bg-[#f3f5f5] dark:bg-[#474646] "
             onClick={() => dispatch(toggleTheme())}
           >
             {theme === "light" ? <FiSun /> : <FiMoon />}
