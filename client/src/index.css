@@ -5,9 +5,9 @@
 /* Light mode styles */
 body {
   --bg-color: white;
-  --text-color: black;
+  --text-color: #404040;
   --navbar-bg: white;
-  --navbar-text: black;
+  --navbar-text: #404040;
   --input-bg: rgb(243, 245, 245);
   --input-text: black;
   --button-bg: white;
@@ -17,10 +17,10 @@ body {
 
 body.dark {
   --bg-color: #121212;
-  --text-color: #f0f0f0;
+  --text-color: #ffff;
   --navbar-bg: #1c1c1c;
   --navbar-text: #f0f0f0;
-  --input-bg: #333;
+  --input-bg: #404040;
   --input-text: #f0f0f0;
   --button-bg: transparent;
   --button-text: white;

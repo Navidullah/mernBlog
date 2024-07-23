@@ -56,14 +56,14 @@ const SignIn = () => {
     <div className="max-container min-h-screen">
       <div className="sub_container">
         <div className="title">
-          <h1 className="bg-emerald-500 text-white w-max p-4 text-3xl rounded-md mb-5">
+          <h1 className="bg-gradient-to-r from-orange-800 via-orange-500 to-black  text-white w-max p-4 text-3xl rounded-md mb-5">
             ThePulse
           </h1>
-          <h1 className="dark:text-slate-300">
+          <h1 className="dark:text-slate-300 text-xl">
             Your Daily Dose of Headlines. Please Sign in here to discover many
             more.
           </h1>
-          <h1 className="dark:text-slate-300">
+          <h1 className="dark:text-slate-300 text-xl">
             If you do not have an account , you can also sign up here.
           </h1>
         </div>
@@ -71,7 +71,9 @@ const SignIn = () => {
           className="form_container  dark:bg-[#404040] border-[#444444] shadow-lg p-8 rounded-md"
           onSubmit={handleSubmit}
         >
-          <h1 className="text-center mb-9 text-3xl ">Sign in</h1>
+          <h1 className="text-center mb-9 text-3xl dark:text-slate-300">
+            Sign in
+          </h1>
 
           <div className=" flex flex-col gap-5">
             <div className="flex flex-col">
@@ -80,7 +82,7 @@ const SignIn = () => {
                 type="email"
                 id="email"
                 placeholder="email@company.com"
-                className=""
+                className="text-slate-400"
                 onChange={handleChange}
               />
             </div>
@@ -90,7 +92,7 @@ const SignIn = () => {
                 type="password"
                 id="password"
                 placeholder="**********"
-                className=""
+                className="text-slate-400"
                 onChange={handleChange}
               />
             </div>
@@ -109,12 +111,14 @@ const SignIn = () => {
             </div>
             <span className="">
               Dont Have an Account?
-              <Link to="/login" className="text-emerald-500">
+              <Link to="/signup" className="text-emerald-500">
                 {" "}
                 Sign up
               </Link>
             </span>
-            {errorMessage && <span className="">{errorMessage}</span>}
+            {errorMessage && (
+              <span className="text-orange-500">*{errorMessage}</span>
+            )}
           </div>
         </form>
       </div>

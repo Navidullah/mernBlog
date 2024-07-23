@@ -1,7 +1,134 @@
 import React from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from ".././redux/user/userSlice.js";
+import Oath from "../components/Firebase/Oath.jsx";
 
 const SignUp = () => {
-  return <div>sign up</div>;
+  const [formData, SetFormData] = useState({});
+  /*const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);*/
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    //setLoading(false);
+    SetFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.username || !formData.password || !formData.email) {
+      console.log(formData);
+      return dispatch(signInFailure("All fields are required")); //setErrorMessage("*All fields are required");
+    }
+    try {
+      dispatch(signInStart);
+      /*setLoading(true);
+      setErrorMessage(null);*/
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        //return setErrorMessage(data.message);
+        console.log(data.message);
+        return dispatch(signInFailure(data.message));
+      }
+      //setLoading(false);
+      if (res.ok) {
+        dispatch(signInSuccess(data));
+        navigate("/signin");
+      }
+    } catch (error) {
+      dispatch(signInFailure(error.message));
+      /*setErrorMessage(error.message);
+      setLoading(false);*/
+    }
+  };
+  return (
+    <div className="max-container min-h-screen">
+      <div className="sub_container">
+        <div className="title">
+          <h1 className="bg-gradient-to-r from-orange-800 via-orange-500 to-black text-white w-max p-4 text-3xl rounded-md mb-5">
+            ThePulse
+          </h1>
+          <h1 className="dark:text-slate-300 text-xl">
+            Your Daily Dose of Headlines. Please Sign in here to discover many
+            more.
+          </h1>
+          <h1 className="dark:text-slate-300 text-xl">
+            If you do not have an account , you can also sign up here.
+          </h1>
+        </div>
+        <form
+          className="form_container  dark:bg-[#404040] border-[#444444] shadow-lg p-8 rounded-md"
+          onSubmit={handleSubmit}
+        >
+          <h1 className="text-center mb-9 text-3xl  dark:text-slate-300">
+            Sign up
+          </h1>
+
+          <div className=" flex flex-col gap-5">
+            <div className="flex flex-col">
+              <span className="">Your username</span>
+              <input
+                type="text"
+                id="username"
+                placeholder="username"
+                className="text-slate-400"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="">Your email</span>
+              <input
+                type="email"
+                id="email"
+                placeholder="email@company.com"
+                className="text-slate-400"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="">Your password</span>
+              <input
+                type="password"
+                id="password"
+                placeholder="**********"
+                className="text-slate-400"
+                onChange={handleChange}
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-indigo-500 w-full py-2 text-white"
+              disabled={loading}
+            >
+              {loading ? <span>Loading...</span> : "Sign up"}
+            </button>
+
+            <span className="">
+              Already Have an Account?
+              <Link to="/signin" className="text-emerald-500">
+                {" "}
+                Sign in
+              </Link>
+            </span>
+            {errorMessage && (
+              <span className="text-orange-500">{errorMessage}</span>
+            )}
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default SignUp;
