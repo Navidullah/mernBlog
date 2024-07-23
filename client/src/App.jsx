@@ -8,6 +8,7 @@ import Projects from "./pages/Projects.jsx";
 
 import Navbar from "./components/Header/Navbar.jsx";
 import PrivateRoute from "./components/Private/PrivateRoute.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
         <Route path="/projects" element={<Projects />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
