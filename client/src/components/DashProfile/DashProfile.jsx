@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 const DashProfile = () => {
   const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className="flex-7 flex justify-center items-center h-screen">
-      <div className="flex flex-col p-3  items-center">
+    <div className="flex-7 flex justify-center ">
+      <div className="flex flex-col p-3  items-center max-w-[500px]">
         <h1 className="my-7 text-center font-semibold text-3xl">Profile</h1>
-        <form className="flex flex-col items-center">
+        <form className="flex flex-col items-center w-[300px] gap-3">
           <div className="w-40 h-40 self-center shadow-md overflow-hidden rounded-full">
             <img
               src={currentUser.profilePicture}
@@ -20,20 +20,20 @@ const DashProfile = () => {
             id="username"
             placeholder="username"
             defaultValue={currentUser.username}
-            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full"
+            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full w-full"
           />
           <input
             type="email"
             id="email"
             placeholder="email"
             defaultValue={currentUser.email}
-            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full"
+            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full w-full"
           />
           <input
             type="password"
             id="password"
             placeholder="password"
-            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full"
+            className="mt-3 bg-gray-100 dark:text-gray-400 rounded-full w-full"
           />
           <button
             type="submit"

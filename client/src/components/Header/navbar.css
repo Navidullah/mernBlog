@@ -12,7 +12,8 @@
   align-items: center;
   justify-content: space-around;
   padding: 15px 0;
-  font-family: "YouTubeSans";
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .logo {
   font-size: 14px;

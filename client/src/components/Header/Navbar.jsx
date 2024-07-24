@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx";
 import { CiMenuFries } from "react-icons/ci";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { FaUser, FaSignOutAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../../redux/theme/themeSlice.js";
 import "./navbar.css";
@@ -78,24 +79,32 @@ const Navbar = () => {
                 onClick={toggleDropdown}
               />
               {dropdownOpen && (
-                <div className="absolute right-0 flex flex-col  mt-2  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg">
-                  <span className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
-                    {currentUser.username} <br />
-                    {currentUser.email}
-                  </span>
-                  <Link
-                    to="/dashboard?tab=profile"
-                    className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Profile
-                  </Link>
-                  <button
-                    onClick={handleSignOut}
-                    className="block w-full text-left px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    Sign Out
-                  </button>
+                <div className="absolute text-[18px] right-0 flex flex-col  mt-2  bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg">
+                  <div className="flex items-center">
+                    <span className="block px-4 py-2  dark:text-gray-200  dark:hover:bg-gray-700  text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">
+                      {currentUser.username} <br />
+                      {currentUser.email}
+                    </span>
+                  </div>
+                  <div className="flex items-center px-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <FaUser />
+                    <Link
+                      to="/dashboard?tab=profile"
+                      className="block px-4 py-2 "
+                      onClick={() => setDropdownOpen(false)}
+                    >
+                      Profile
+                    </Link>
+                  </div>
+                  <div className="flex items-center px-3 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <FaSignOutAlt />
+                    <button
+                      onClick={handleSignOut}
+                      className="block w-full text-left px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

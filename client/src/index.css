@@ -13,6 +13,8 @@ body {
   --button-bg: white;
   --button-text: black;
   --border-color: #4f46e5;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 body.dark {
