@@ -18,7 +18,7 @@ body {
 body.dark {
   --bg-color: #121212;
   --text-color: #ffff;
-  --navbar-bg: #1c1c1c;
+  --navbar-bg: black;
   --navbar-text: #f0f0f0;
   --input-bg: #404040;
   --input-text: #f0f0f0;

@@ -7,12 +7,16 @@ import {
   FaComments,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
-    <div className="h-screen bg-gray-800 text-white w-64">
+    <div className="h-full dark:bg-gray-800 text-white  shadow-md">
       <div className="p-4">
-        <h1 className="text-2xl font-bold">ThePulse</h1>
+        <h1 className="text-sm text-gray-800 dark:text-white">
+          Dear {currentUser.username}
+        </h1>
       </div>
       <nav className="mt-10">
         <a
